@@ -1,10 +1,10 @@
+love.graphics.setDefaultFilter('nearest', 'nearest', 100)
 require 'src/Dependencies'
 
 function love.load()
     --TODO:(Ryan) for debug purposes we may want to write the seed to a file`
     math.randomseed(os.time()) --TODO: is os time really the best seed
     love.window.setTitle(GAME_TITLE)
-    love.graphics.setDefaultFilter('nearest', 'nearest')
 
     push:setupScreen(V_WIDTH, V_HEIGHT, W_WIDTH, W_HEIGHT, {
         fullscreen = false,
@@ -41,6 +41,7 @@ end
 
 function love.update(dt)
     Timer.update(dt) --TODO:(Ryan) what is this?
+    gStateStack:processAI()
     gStateStack:update(dt)
 
     if love.keyboard.wasPressed("escape") then

@@ -27,6 +27,17 @@ DOWN = "s"
 ATTACK = "space"
 
 --
+--World transform constants
+--
+PIXELS_PER_METER = 1 --TODO:(Ryan) be more thoughtful about this values
+
+
+--
+--Math Constants
+--
+DIAGONAL_MOVE_MULTIPLIER = 1 / math.sqrt(2)
+
+--
 --DEBUG COLORS
 --
 HITBOX_COLOR = {

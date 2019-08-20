@@ -18,11 +18,11 @@ function StateStack:update(dt)
     until index <= 0 or (not continue)
 end
 
-function StateStack:processAI()
+function StateStack:processAI(blackboard)
     local index = #self.states
     local continue
     repeat 
-        continue = self.states[index]:processAI()
+        continue = self.states[index]:processAI(blackboard)
         index = index - 1
     until index <= 0 or (not continue)
 end
